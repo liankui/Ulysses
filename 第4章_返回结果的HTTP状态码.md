@@ -27,4 +27,22 @@
 | 304 Not Modified       | 客户端发送附带条件的请求【1】时，服务器端允许请求访问资源，但未满足条件请求 |
 | 307 Temporary Redirect | 临时重定向。同302，但是不会从POST变为GET。                   |
 
-p.s.  【1】采用的GET方法的请求报文中包含If-Match、If-Modified-Since、If-None-Match、If-Range、If-Unmodified-Since中任一首部。
+p.s.  【1】采用的GET方法的请求报文中包含If-Match、If-Modified-Since、If-None-Match、If-Range、If-Unmodified-Since中任一首部。   
+
+## 4XX 客户端错误
+
+| 4XX              | 说明                                                         |
+| ---------------- | ------------------------------------------------------------ |
+| 400 Bad Request  | 请求报文中存在语法错误。                                     |
+| 401 Unauthorized | 发送的请求需要有通过HTTP认证（BASIC认证、DIGEST认证）的认证信息，若之前已经进行过1次请求，则表示用户认证失败。 |
+| 403 Forbidden    | 请求资源的访问被服务器拒绝了。可能的原因：未获得文件系统的访问授权，访问权限出现某些问题（从未授权的发送源IP地址试图访问）。 |
+| 404 Not Found    | 服务器上无法找到请求的资源。                                 |
+
+## 5XX 服务器错误
+
+| 5XX                       | 说明                                                         |
+| ------------------------- | ------------------------------------------------------------ |
+| 500 Internal Server Error | 服务器端在执行请求时发生了错误。也可能时Web应用存在的bug或某些临时的故障。 |
+| 503 Service Unavailable   | 服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。   |
+
+​                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
